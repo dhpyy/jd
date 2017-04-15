@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        a {
+
+        }
+        div {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <a href="www.baidu.com">
+        <img src="images/topB1.png" >       <!--img作为一个文字大小撑起的a标签高度，而不是看图片本身高度-->
+    </a>                                    <!--但点击图片区域会触发a标签的href属性-->
+<div></div>
+    <a href="">    d        </a>                    <!-标签内部的空格不起作用-->
+    <span>             asdas      </span>          <!-标签之间的空格会发生空白折叠-->
+</body>
+</html>

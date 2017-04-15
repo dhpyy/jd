@@ -1,0 +1,364 @@
+@charset "UTF-8";
+/*=================================所有页面公共的CSS */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#F6F6F6
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1210px;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+/*===========================公共部分->顶部导航条的CSS*/
+.shortcut {
+    /*浮动元素不能撑起块级元素*/
+    height: 30px;
+    /*垂直居中，可继承*/
+    line-height: 30px;
+    background: #f1f1f1;
+}
+
+/*含有下三角的盒子*/
+.shortcut .fore {
+    /*包含下三角的盒子有padding*/
+    padding: 0 20px 0 10px;
+    position: relative;
+}
+
+.shortcut .fore i {
+    /*相对于包含下三角的盒子 绝对定位*/
+    position: absolute;
+    top: 13px;
+    right: 4px;
+    /*脱标子元素不能撑起父盒子宽高*/
+    width: 15px;
+    height: 7px;
+    /*隐藏子元素溢出部分*/
+    overflow: hidden;
+}
+
+.shortcut .fore i s {
+    /*相对于下三角盒子 绝对定位*/
+    position: absolute;
+    top: -8px;
+    left:0;
+    font: 400 15px/15px "宋体";
+}
+
+.shortcut li {
+    float: left;
+    padding: 0 10px;    /*含下三角的元素的选择器权重更大，层叠掉该属性*/
+}
+
+.shortcut li.line {
+    width: 1px;
+    height: 12px;
+    padding: 0;
+    margin-top: 9px;   /*不能使用padding去挤，背景能显示在padding区域*/
+    background-color: #ddd;
+}
+
+.shortcut li.tel-jd {
+    /*该li同时也是.fore类，已设置为相对定位*/
+    padding: 0 20px 0 25px;
+    position: relative;
+}
+
+.tel-jd .tel {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 20px;
+    background: url(../images/sprite.png) no-repeat;
+}
+
+
+/*=============================公共部分->topBanner的CSS*/
+.topbanner {
+    background-color: #8A25C6;
+}
+
+.topbanner .colse-banner {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 19px;
+    height: 19px;
+    background: url(../images/close.png) no-repeat;
+}
+
+/*=============================公共部分->页面头部的CSS*/
+
+.logo {
+    float: left;
+    width: 360px;
+    height: 75px;
+    margin-top: 25px;
+    position: relative;
+}
+.logo .jd-a {
+    display: block;
+    width: 270px;
+    height: 60px;
+    background: url(../images/logo.png) no-repeat;
+    text-indent: -999em;
+}
+.logo .db11 {
+    position: absolute;
+    top: -18px;
+    left: 168px;
+    width: 180px;
+    height: 80px;
+    background: url(../images/dong.gif) no-repeat;
+}
+
+.search {
+    float: left;
+    /*内容宽高*/
+    margin-top: 25px;
+}
+.search input {
+    /*浮动元素，文字环绕，去除空白折叠*/
+    float: left;
+    width: 450px;
+    height: 32px;
+    border: 2px solid #B61D1D;
+    padding-left: 4px;
+    font: 14px/32px "microsoft yahei";
+    color: #666;
+}
+.search button {
+    width: 80px;
+    height: 36px;
+    background-color: #B61D1D;
+    font: 16px/36px "microsoft yahei";
+    color: #fff;
+    cursor: pointer;
+}
+
+.car {
+    float: right;
+    width: 98px;
+    height: 34px;
+    border: 1px solid #DFDFDF;
+    padding-left: 40px;         /*使用padding挤文字与显示购物车图标*/
+    margin: 25px 65px 0 0;
+    line-height: 34px;
+    position: relative;
+}
+.car .icon1 {
+    position: absolute;
+    top: 9px;
+    left: 20px;
+    width: 16px;
+    height: 13px;
+    background: url(../images/sprite.png) no-repeat -1px -59px;
+}
+.car .icon2 {
+    /*压盖定位，不用使用行高进行居中*/
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font: 400 13px/13px simsun;
+}
+.car .icon3 {
+    position: absolute;
+    top: -4px;              /*如果未指定left/right,则水平方向默认文档流中的位置*/
+    width: 16px;
+    height: 14px;
+    border-radius: 7px 7px 7px 0;
+    background: #C81623;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.hotwords {
+    float: left;
+   /*默认内容宽高*/
+    padding-top: 7px;
+}
+.hotwords a {
+    margin-right: 6px;
+}
+
+/*=============================公共部分->导航条的CSS*/
+.nav {
+    border-bottom: 2px solid #B1191A;
+}
+
+.dropbox {
+     float: left;
+     height: 44px;
+     overflow: visible;
+     position: relative;     /*设置为定位元素才有z-index属性*/
+     z-index: 10;            /*溢出部分压盖*/
+}
+.dropbox .dt a {
+    display: block;
+    width: 200px;
+    height: 44px;
+    padding-left: 10px;
+    font: 400 15px/44px "microsoft yahei";
+    color: #fff;
+    background-color: #B1191A;
+}
+.dropbox .dd {
+    height: 465px;
+    margin-top: 2px;        /*使dt与dd的分界对齐边框*/
+    background-color: #C81623;
+}
+.dropbox .dd .item {
+    height: 31px;              /*设置了高度的盒子才能关住浮动*/
+                               /*不能直接写行高，浮动子元素不能撑起盒子高度*/
+    padding: 0 15px 0 10px;
+}
+.dropbox .item h3 {
+    float: left;
+    font: 400 15px/31px "microsoft yahei";
+    color: #fff;
+}
+.dropbox .item h3 a {
+    color: #fff;
+}
+.dropbox .item h3 a:hover {
+    color: yellow;
+}
+.dropbox .item span {
+    float: right;
+    font: 600 15px/31px "microsoft yahei";
+    color: #fff;
+}
+
+.navitems li {
+    float: left;
+}
+.navitems li.new {
+    background: url(../images/new.jpg) no-repeat right top;    /*背景定位属性，用作被背景图片的页面定位*/
+}                                                              /*偏方：显示图片部分，CSS精灵*/
+.navitems li a {
+    display: block;
+    font:400 15px/44px "微软雅黑";
+    padding: 0 20px;
+}
+
+.bike {
+    float: right;
+}
+
+/*=============================公共部分->页面底部的CSS*/
+.slogan {
+    height: 54px;
+    padding: 20px 0;
+    background: #f5f5f5;
+    position: relative;
+}
+/*抽象出slogan中每个span的共用装饰类*/
+.service .slogan span.item {
+    position: absolute;
+    left: 50%;              /*不写top默认为文档流中高度*/
+    width: 302px;
+}
+/*针对每个item进行定位（使用定位方式居中有利于实现窗口缩小时的响应式效果）*/
+.slogan .item1 {
+    margin-left: -602px;
+}
+.slogan .item2 {
+    margin-left: -302px;
+}
+.slogan .item4 {
+    margin-left: 302px;
+}
+
+.guide {
+    height: 195px;
+    padding-top: 15px;
+    border-bottom: 1px solid #E5E5E5;
+}
+.guide dl {
+    float: left;
+    width: 198px;
+}
+.guide dl dt {
+    font: 400 16px/38px "微软雅黑";   /*块级元素，行高作为内容高*/
+}
+.guide dl dd {
+    height: 20px;
+}
+.guide .coverage {
+    float: right;
+    width: 210px;
+    height: 165px;
+    background: url(../images/china.png) no-repeat left bottom;
+}
+.guide .coverage dt {
+    font: 400 16px/38px "微软雅黑";   /*块级元素，行高作为内容高*/
+}
+.guide .coverage dd {
+    padding-top: 10px;
+}
+.guide .coverage .detail {
+    float: right;
+    padding-top: 5px;
+}
+
+.copyright {
+    padding: 23px 0 30px;
+}
+.copyright .links {
+    height: 28px;
+    text-align: center;
+}
+.copyright .links a {
+    padding: 0 6px;
+}
+.copyright .info {
+    text-align: center;
+}
+.copyright .auth {
+    text-align: center;
+}

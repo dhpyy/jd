@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .BFC {
+            overflow: hidden;
+            border: 1px solid gold;
+            position: relative;
+        }
+        .ab {
+            float: left;        /*BFC可以关注浮动元素，但不能关住脱标的定位元素*/
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="BFC">
+        <div class="ab">
+        </div>
+    </div>
+</body>
+</html>

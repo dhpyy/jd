@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            border: 5px solid gold;
+        }
+        img{
+            float: left;
+        }
+        p{
+            float: right;
+        }
+        .clearfix:before .clearfix:after{
+            content: '';                   /* ：before设置一个空元素防止margin塌陷现象*/
+            display: table;                /* ：after设置一个空元素以清除浮动*/
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            /* '_' IE6能识别，'*' IE6、7能识别*/
+            *zoom: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <img src="images/1.jpg">
+        <p>我是文本我是文本我是文本我是文本我是文本</p>
+    </div>
+</body>
+</html>
