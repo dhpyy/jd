@@ -5,6 +5,12 @@
     margin: 12px 0 0 220px;
     position: relative;
 }
+.slider .pic li {
+    display: none;
+}
+.slider .pic li.current {
+    display: block;
+}
 .slider .circles {
     position: absolute;
     bottom: 8px;
@@ -21,6 +27,9 @@
     text-align: center;
     line-height:18px;
     color: #fff;
+}
+.slider .circles li.current {
+    background: #C81623
 }
 .slider .arrow {
     font: 500 18px/62px "宋体";
@@ -273,7 +282,34 @@
 .l6 .last .cont_head {
     background: #844E4E;
 }
-
+/*=============================================侧边栏的CSS*/
+.sidebar
+{
+    position: fixed;
+    width: 38px;
+    top:200px;
+    left:50%;
+    margin-left:-653px;
+    display: none;
+}
+.sidebar li{
+    height: 36px;
+    border:1px solid #DEDEDE;
+    margin-bottom: 5px;
+    font-size:0;
+    background: url(../images/bg.png) no-repeat;
+}
+.sidebar li:hover,.sidebar li.current,.back
+{
+    border:1px solid #ED5759;
+    background: #FDEEEE;
+    font-size:12px;
+    color: #ED5759;
+    padding-left: 6px;
+    padding-top: 2px;
+    height: 34px;
+    cursor: pointer;
+}
 
 
 
